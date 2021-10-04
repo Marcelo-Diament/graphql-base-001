@@ -833,6 +833,9 @@ To test it, just access `localhost:3000` (3000 is the default port, but it can b
 
 We won't create partials template for now. We'll keep it simple.
 
+#### 03. Users Placeholder Data
+
+Now we'll create a `data` folder to include our users within a JSON file (`users.json`).
 
 ___
 

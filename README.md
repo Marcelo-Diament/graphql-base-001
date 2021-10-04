@@ -2,13 +2,13 @@
 
 ## Summary
 
-* GraphQL Query Language
-
-* Schema Definition Language
+* GraphQL Query Language and Schema Definition Language
 
 * Building a GraphQL API with Apollo Server
 
-## Intro
+## GraphQL Query Language and Schema Definition Language
+
+### Intro
 
 GraphQL is a query language to use with API
 
@@ -24,7 +24,7 @@ It also uses a Domain Specific Language (DSL), which allow us to define schemas 
 
 ### REST x GraphQL
 
-### Get Data
+#### Get Data
 
 **REST**
 
@@ -78,7 +78,7 @@ Another advantage is that we can define how data will be formatted and to use de
 
 Even if it is a `"GETty"` request, we normally use `POST` method, because we do not send a simple operation, but we do send the query operation itself within the body so it can be executed. 
 
-### Change Data
+#### Change Data
 
 **REST**
 
@@ -115,15 +115,15 @@ mutation {
 }
 ```
 
-### Query x Response Flow
+#### Query x Response Flow
 
 We can think about this flow like if we sent the query, GraphQL server distributes resolver functions to each necessary endpoint and then returns a response for us.
 
-## GraphQL Playground
+### GraphQL Playground
 
 Let's see those concepts in real examples.
 
-### Simple Queries
+#### Simple Queries
 
 Access [Pet Library from Moonhighway](https://pet-library.moonhighway.com) to try some queries.
 
@@ -297,7 +297,7 @@ Results:
 }
 ```
 
-#### DOCS
+##### DOCS
 
 But how can we know all the possible queries? You can click on DOCS tab (on the right site) to see each possible querie and its details.
 
@@ -366,7 +366,7 @@ By using alias, the alias value is used as response key.
 
 If we didn't use a alias, we would get an error.
 
-### Queries, Mutations and Subscriptions
+#### Queries, Mutations and Subscriptions
 
 Access [Vote from Moonhighway](http://vote.moonhighway.com/) to try some more queries and also mutations.
 
@@ -485,7 +485,7 @@ subscription {
 }
 ```
 
-#### Data Types
+##### Data Types
 
 The default data types in GraphQL are: ID, String, Int, Float and Boolean. But we can deal with custom data types by using Scalars.
 
@@ -493,7 +493,7 @@ The default data types in GraphQL are: ID, String, Int, Float and Boolean. But w
 
 Common use of scalar are emails, zipcodes, URLs, dates...
 
-### GraphQL Playground | More complex queries
+#### More complex queries
 
 Back to the [Pet Library](https://pet-library.moonhighway.com), let's get all customers and their current pets:
 
@@ -572,7 +572,7 @@ Response:
 }
 ```
 
-## Challenges
+### Challenges
 
 Now we'll use a third playground - [Snowtooth](https://snowtooth.moonhighway.com/).
 
@@ -584,7 +584,7 @@ Our goal is to:
 
 3. Change the status of one lift.
 
-### Challenge 01
+#### Challenge 01
 
 ```gql
 query {
@@ -596,7 +596,7 @@ query {
 }
 ```
 
-### Challenge 02
+#### Challenge 02
 
 ```gql
 query {
@@ -612,7 +612,7 @@ query {
 }
 ```
 
-### Challenge 03
+#### Challenge 03
 
 ```gql
 mutation {
@@ -643,7 +643,7 @@ Important to note that single quotes are not allowed, just double quotes.
 
 Also, on this mutation we had to defined the return because the response gives us an object (different from pet library that returns a string).
 
-## Dynamic Mutations
+### Dynamic Mutations
 
 A better way to do this mutation would be by using variables (so we could have dynamic queries on client side):
 
@@ -680,7 +680,7 @@ Response:
 }
 ```
 
-## Schema
+### Schema
 
 If we want to have custom queries and mutations, we need to define those types on the Schema.
 
@@ -712,7 +712,7 @@ type Mutation {
 }
 ```
 
-## More Practice
+### More Practice
 
 Let's use a different GraphQL API. The [GitHub's GraphQL API](docs.github.com/en/graphql/overview/explorer).
 
@@ -757,6 +757,10 @@ Response:
   }
 }
 ```
+
+## Building a GraphQL API with Apollo Server
+
+
 
 ___
 

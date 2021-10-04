@@ -760,7 +760,9 @@ Response:
 
 ## Building a GraphQL API with Apollo Server
 
-Main documentation: [Code using GraphQL](graphql.org/code/) | [Using JS Section](https://graphql.org/code/#javascript)
+GraphQL documentation: [Code using GraphQL](graphql.org/code/) | [Using JS Section](https://graphql.org/code/#javascript)
+
+Apollo Server documentation: [apollo-server repository](https://github.com/apollographql/apollo-server)
 
 In this practice we'll use Apollo Server with Express. But it is possible to use other frameworks/packages. Take a look at the main documentation.
 
@@ -780,6 +782,57 @@ npm install nodemon --save-dev
 # Install all dependencies
 npm install
 ```
+
+#### 02. Users Setup
+
+We need to make a few adjusts:
+
+**Update `routes/users.js`**
+
+```js
+const express = require('express'),
+    router = express.Router(),
+    controller = require('../controllers/users')
+
+router.get('/', controller.index)
+
+module.exports = router
+```
+
+**Create `controllers/users.js`**
+
+```js
+const controller = {
+    index: async (req, res, next) => {
+        res.render('users', {
+            title: 'Users'
+        });
+    }
+}
+
+module.exports = controller
+```
+
+**Create `views/users.ejs`**
+
+```ejs
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>You're at <%= title %> page</p>
+  </body>
+</html>
+```
+
+To test it, just access `localhost:3000` (3000 is the default port, but it can be changed).
+
+We won't create partials template for now. We'll keep it simple.
+
 
 ___
 

@@ -775,8 +775,8 @@ In this practice we'll use Apollo Server with Express. But it is possible to use
 express server --view=ejs
 # Access server folder
 cd server
-# Install Apollo Server Express as dependency
-npm install apollo-server-express --save
+# Install Apollo Server Express and GraphQL as dependencies
+npm install apollo-server-express graphql --save
 # Install Nodemon as dev-dependency
 npm install nodemon --save-dev
 # Install all dependencies
@@ -836,6 +836,9 @@ We won't create partials template for now. We'll keep it simple.
 #### 03. Users Placeholder Data
 
 Now we'll create a `data` folder to include our users within a JSON file (`users.json`).
+
+#### 04. GraphQL Preset
+
 
 ___
 

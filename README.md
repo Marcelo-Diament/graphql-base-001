@@ -760,7 +760,26 @@ Response:
 
 ## Building a GraphQL API with Apollo Server
 
+Main documentation: [Code using GraphQL](graphql.org/code/) | [Using JS Section](https://graphql.org/code/#javascript)
 
+In this practice we'll use Apollo Server with Express. But it is possible to use other frameworks/packages. Take a look at the main documentation.
+
+### Step By Step
+
+#### 01. Create a Express server and install its dependencies
+
+```sh
+# Create a server with express-generator and EJS as template view
+express server --view=ejs
+# Access server folder
+cd server
+# Install Apollo Server Express as dependency
+npm install apollo-server-express --save
+# Install Nodemon as dev-dependency
+npm install nodemon --save-dev
+# Install all dependencies
+npm install
+```
 
 ___
 
